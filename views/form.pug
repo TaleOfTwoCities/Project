@@ -1,16 +1,19 @@
-form(action="." method="POST")
-label(for="name") Name:
-input(
-    type="text"
-    id="name"
-    name="name"
-)
+extends layout
 
-label(for="email") Email: 
-input(
-    type="email"
-    id="email"
-    name="email"
-)
+block content 
+        form(action="." method="POST")
+        label(for="name") Name:
+        input(
+            type="text"
+            id="name"
+            name="name"
+        )
 
-input(type="submit" values="Submit")
+        label(for="email") Email: 
+        input(
+            type="email"
+            id="email"
+            name="email"
+        )
+
+        input(type="submit" values="Submit")
