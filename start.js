@@ -1,4 +1,5 @@
 require("dotenv").config();
+require('./models/Registration')
 
 const mongoose = require("mongoose");
 const app = require("./app");
@@ -16,3 +17,4 @@ mongoose.connection
   .on("error", (err) => {
     console.log(`Connection error: ${err.message}`);
   });
+
