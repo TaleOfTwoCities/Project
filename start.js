@@ -1,7 +1,10 @@
 require("dotenv").config();
-require('./models/Registration')
+
 
 const mongoose = require("mongoose");
+
+require('./models/Registration');
+
 const app = require("./app");
 
 const server = app.listen(4000, () => {

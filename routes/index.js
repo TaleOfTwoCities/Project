@@ -1,10 +1,15 @@
+const auth =  require('http-auth');
 const express = require("express");
 const router = express.Router();
-const app = express();
+const path = require('path');
 const { check, validationResult } = require("express-validator");
 const mongoose = require('mongoose');
 const Registration = mongoose.model('Registration');
 
+
+const basic = auth.basic({
+  file: path.join(__dirname, '../users.htpasswd'),
+});
 
 router.get("/", (req, res) => {
   res.render("form", { title: "Registration form" });
@@ -44,6 +49,17 @@ router.post('/',
     }
   }
 );
+
+router.get('/registrations', basic.check((req, res) => {
+  Registration.find()
+    .then((registrations) => {
+      res.render('index', { title: 'Listing registrations', registrations });
+    })
+    .catch((err) => {
+      console.warn(err);
+      res.send('Sorry! Something went wrong.');
+    });
+}));
 
 
 
