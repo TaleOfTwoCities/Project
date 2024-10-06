@@ -1,0 +1,16 @@
+//General
+    node js
+    express
+    mongoDB
+    Bootstrap(not necessary for now)
+
+//specific dependencies
+    "body-parser": "^1.20.2",
+    "check": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.3.0",
+    "pug": "^3.0.3"
+
+    
